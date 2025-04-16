@@ -10,13 +10,16 @@ function megjelenit(y) {
 
     for (const elem of y.prizes) {
         sz += `
-        <div>
-            <p>${elem.year}</p>
-            <p>${elem.category}</p>
+        <div class="col-sm-3">
+            <div class="szegely">
+                <p>${elem.year}</p>
+                <p>${elem.category}</p>
+            </div>
         </div>
         `
     }
 
     document.getElementById("keret").innerHTML = sz;
+    
 }
 
