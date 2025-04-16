@@ -7,19 +7,27 @@ function megjelenit(y) {
 
 
     let sz = "";
+    let sorSzam = 0;
 
     for (const elem of y.prizes) {
         sz += `
         <div class="col-sm-3">
-            <div class="szegely">
+            <div class="szegely" data-bs-toggle="modal" data-bs-target="#myModal" onclick = "reszletKiir(${sorSzam})">
                 <p>${elem.year}</p>
                 <p>${elem.category}</p>
+
             </div>
         </div>
         `
+
+        sorSzam++;
     }
 
     document.getElementById("keret").innerHTML = sz;
     
+}
+
+function reszletKiir(sorSzam) {
+    console.log(sorSzam);
 }
 

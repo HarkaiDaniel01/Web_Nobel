@@ -4,4 +4,11 @@
     padding: 10px;
     box-shadow: 3px 3px 3px;
     text-align: center;
+    background-color: bisque;
+    color: black;
+    font-weight: bold;
+}
+
+body {
+    background-color: ivory
 }
