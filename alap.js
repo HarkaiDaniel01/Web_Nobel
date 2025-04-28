@@ -1,10 +1,12 @@
+let tomb = [];
+
 fetch("https://api.nobelprize.org/v1/prize.json")
 .then(x => x.json())
 .then(y => megjelenit(y));
 
 function megjelenit(y) {
     console.log(y)
-
+    tomb = y;
 
     let sz = "";
     let sorSzam = 0;
@@ -23,11 +25,15 @@ function megjelenit(y) {
         sorSzam++;
     }
 
-    document.getElementById("keret").innerHTML = sz;
-    
+    document.getElementById("keret").innerHTML = sz;  
 }
 
 function reszletKiir(sorSzam) {
     console.log(sorSzam);
+    //console.log(tomb);
+    //alert(JSON.stringify(tomb));
+
+    document.getElementById("modalFej").innerHTML = tomb.prizes[sorSzam].year + " " + tomb.prizes[sorSzam].category;
+    
 }
 
