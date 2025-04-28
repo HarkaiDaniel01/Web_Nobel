@@ -34,6 +34,24 @@ function reszletKiir(sorSzam) {
     //alert(JSON.stringify(tomb));
 
     document.getElementById("modalFej").innerHTML = tomb.prizes[sorSzam].year + " " + tomb.prizes[sorSzam].category;
+
+    let sz = `<ol>`
     
+    for (const elem of tomb.prizes[sorSzam].laureates) {
+        
+        sz += `
+        <li>
+            <p>${elem.firstname} ${elem.surname}</p>
+            <p>${elem.motivation}</p>
+        
+       
+        </li>`
+
+    }
+
+    sz += `</ol>`
+
+    document.getElementById("modalTorzs").innerHTML += sz;
+
 }
 
