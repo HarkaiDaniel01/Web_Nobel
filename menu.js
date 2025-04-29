@@ -14,7 +14,7 @@ document.getElementById("menu").innerHTML = `
           <a class="nav-link" href="evkeres.html">Év keresés</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="nevkeres.html">Név keresés</a>
         </li>
       </ul>
     </div>

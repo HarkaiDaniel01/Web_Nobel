@@ -15,7 +15,6 @@ function kereses() {
                         <p style="font-size: 20px; text-decoration: underline; color: blue;">
                             ${elem.year} ${elem.category}
                         </p>
-                    
                     `
 
                     for (const elemEmber of elem.laureates) {
