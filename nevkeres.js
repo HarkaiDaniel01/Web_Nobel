@@ -9,7 +9,18 @@ function keresesNev() {
 
 function nevMegjelenit(y, beNev) {
 
-
+    let sz = `
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Év,Kategória</th>
+        <th>Keresztnév</th>
+        <th>Vezetéknév</th>
+        <th>Indok</th>
+      </tr>
+    </thead>
+    <tbody>
+    `
 
 
     for (const elem of y.prizes) {
@@ -18,8 +29,30 @@ function nevMegjelenit(y, beNev) {
             for (const alElem of elem.laureates) {
                 
                 
-                if (alElem.firstname == beNev) {
+                if (alElem.firstname.toLowerCase().includes(beNev.toLowerCase()) || alElem.motivation.toLowerCase().includes(beNev.toLowerCase())) {
                     console.log(alElem.firstname);
+                    sz += `
+                    <tr>
+                        <td>${elem.year} ${elem.category}</td>
+                        <td>${alElem.firstname}</td>
+                        <td>${alElem.surname}</td>
+                        <td>${alElem.motivation}</td>
+                    </tr>`
+                }
+
+                //---------------surname vizusgálata--------------------
+
+                if (alElem.surname != undefined) {
+                    if (alElem.surname.toLowerCase().includes(beNev.toLowerCase())) {
+                        console.log(alElem.firstname);
+                        sz += `
+                        <tr>
+                            <td>${elem.year} ${elem.category}</td>
+                            <td>${alElem.firstname}</td>
+                            <td>${alElem.surname}</td>
+                            <td>${alElem.motivation}</td>
+                        </tr>`
+                    }
                 }
             }
 
@@ -27,4 +60,12 @@ function nevMegjelenit(y, beNev) {
             console.log(elem.year + " " + elem.category)
         }
     }
+
+    sz += `</tbody>
+    </table>`
+
+    document.getElementById("tablazat").innerHTML = sz;
+
+
+
 }
