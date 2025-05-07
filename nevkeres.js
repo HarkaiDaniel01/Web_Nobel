@@ -66,6 +66,4 @@ function nevMegjelenit(y, beNev) {
 
     document.getElementById("tablazat").innerHTML = sz;
 
-
-
 }
